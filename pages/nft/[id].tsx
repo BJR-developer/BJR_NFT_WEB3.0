@@ -13,15 +13,17 @@ interface Props {
 }
 
 export default function NFTdropPage({ collection }: Props) {
+  console.log(collection);
+
   const [price, setPrice] = useState<string>("")
   const [quantity, setQuantity] = useState<number>(1)
   const [claimed, setClaimed] = useState<number>(0)
   const [totalSupply, setTotalSupply] = useState<number>(0)
   const [minting, setMinting] = useState(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [rejected, setRejected] = useState<boolean>(false)
+  const [rejected, setSupplyChange] = useState<boolean>(false)
 
-  const nftDrop = useNFTDrop("0x43C7a3AE6a9497e8E2148058C696A6a582b4D72C")
+  const nftDrop = useNFTDrop(collection.address)
   const address = useAddress();
   const router = useRouter();
 
@@ -36,27 +38,32 @@ export default function NFTdropPage({ collection }: Props) {
     await nftDrop?.claimTo(address, quantity)
       .then(async (tx) => {
         toast.dismiss(loadingMinting)
-        toast.success("Boom!!!🔥🔥 You successfully minted")
-        console.log("tx", tx);
-        const receipt = tx[0].receipt;
-        toast.success("receipt:" + receipt)
-        // the transaction receipt
-        const claimedTokenId = tx[0].id; // the id of the NFT claimed
-        toast.success("Climed Token:" + claimedTokenId)
-        const claimedNFT = await tx[0].data(); // (optional) get the claimed NFT metadata
+        toast.success("Boom!!!🔥🔥 You successfully minted", { duration: 4000 })
+        setSupplyChange(true)
+        // console.log("tx", tx);
+        // const receipt = tx[0].receipt;
+        // toast.success("receipt:" + receipt)
+        // // the transaction receipt
+        // const claimedTokenId = tx[0].id; // the id of the NFT claimed
+        // toast.success("Climed Token:" + claimedTokenId)
+        // const claimedNFT = await tx[0].data(); // (optional) get the claimed NFT metadata
       })
       .catch(err => {
-        toast.error("💔Something went wrong!!")
+        toast.dismiss(loadingMinting)
+        toast.error("💔Something went wrong!!", { duration: 4000 })
         console.log("err", err.code);
         setMinting(false);
         if (err.code === 4001) {
-          setRejected(true)
+          setTimeout(() => {
+            toast.error("You Rejected To Minting..😢!!", { duration: 4000 })
+          }, 1000);
+          setSupplyChange(true)
         }
       }
       )
       .finally(() => {
         setMinting(false);
-        setRejected(false)
+        setSupplyChange(false)
       })
   }
 
@@ -68,7 +75,7 @@ export default function NFTdropPage({ collection }: Props) {
       setLoading(false)
     }
     fetchPrice();
-  }, [nftDrop])
+  }, [nftDrop, totalSupply])
 
 
   useEffect(() => {
@@ -140,7 +147,7 @@ export default function NFTdropPage({ collection }: Props) {
             </div>
           </div>
           {/* bottom part  */}
-          <button onClick={() => { mintNFT(address) }} disabled={!nftDrop || !address || minting || (totalSupply === claimed)} className={`w-full ${loading || !address || minting || !nftDrop || (totalSupply === claimed) ? ("text-white  bg-gray-400") : ("bg-rose-600 text-white")} rounded-3xl py-3 font-bold`}>{loading ? "Loading..." : claimed === totalSupply ? "SOLD OUT" : minting ? "MINTING..." : !address ? `Sign in to mint (${price} ETH)` : `💎MINT (${price} ETH)`}</button>
+          <button onClick={() => { mintNFT(address) }} disabled={!nftDrop || !address || minting || (totalSupply === claimed)} className={`w-full ${loading || !address || minting || !nftDrop || (totalSupply === claimed) ? ("text-white  bg-gray-400") : ("bg-rose-600 hover:bg-rose-700 transition-all text-white")} rounded-3xl py-3 font-bold`}>{loading ? "Loading..." : claimed === totalSupply ? "SOLD OUT" : minting ? "MINTING..." : !address ? `Sign in to mint (${price} ETH)` : `💎MINT (${price} ETH)`}</button>
         </div>
       </div>
     </>
@@ -153,6 +160,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     title,
     description,
     nftCollectionName,
+    address,
     slug{
   current
   },

@@ -66,7 +66,7 @@ export const Navbar = () => {
                 <BsFacebook className='w-6 h-6 md:w-8 md:h-8 text-blue-600' />
               </a>
             </li>
-            <button onClick={() => address ? disconnectMetamask() : connectWithMetamask()} className='bg-rose-600 text-gray-50 md:pt-2 md:pb-2.5 pt-1 pb-1.5 px-4 text-center font-bold rounded-3xl '>{address ? 'Sign out' : 'Sign In'}</button>
+            <button onClick={() => address ? disconnectMetamask() : connectWithMetamask()} className='bg-rose-600  hover:bg-rose-700 transition-all text-gray-50 md:pt-2 md:pb-2.5 pt-1 pb-1.5 px-4 text-center font-bold rounded-3xl '>{address ? 'Sign out' : 'Sign In'}</button>
           </ul>
         </nav>
       </div>

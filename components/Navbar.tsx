@@ -31,7 +31,7 @@ const Navbar = ({ isDark }: Props) => {
           </Link>
           <Link href="/mint">
             {/* bg-black text-gray-100 */}
-            <a className={`poppins ${isDark == "true" ? "bg-transparent hover:bg-white hover:text-gray-800 text-gray-100 border-gray-100" : "bg-transparent hover:bg-black hover:text-gray-100 text-gray-800 border-gray-800"} border-2 text-center transition-all px-4 py-1 rounded-lg ml-2 sm:ml-6 uppercase text-xs md:text-sm font-medium tracking-wide`}>
+            <a className={`poppins ${isDark == "true" ? "bg-transparent  hover:bg-white hover:text-gray-800 text-gray-100 border-gray-100" : "bg-transparent hover:bg-black hover:text-gray-100 text-gray-800 border-gray-800"} border-2 text-center transition-all px-4 py-1 rounded-lg ml-2 sm:ml-6 uppercase text-xs md:text-sm font-medium hidden sm:block tracking-wide`}>
               <span className=" pr-2 ">
                 Minting
               </span>
@@ -70,7 +70,7 @@ const Navbar = ({ isDark }: Props) => {
                 <BsFacebook className='w-6 h-6 md:w-8 md:h-8 text-blue-600' />
               </a>
             </li>
-            <button onClick={() => address ? disconnectMetamask() : connectWithMetamask()} className='bg-rose-600 text-gray-50 md:pt-2 md:pb-2.5 pt-1 pb-1.5 px-4 text-center font-bold rounded-3xl '>{address ? 'Sign out' : 'Sign In'}</button>
+            <button onClick={() => address ? disconnectMetamask() : connectWithMetamask()} className='bg-rose-600 hover:bg-rose-700 transition-all min-w-[96px] text-gray-50 py-1 md:py-2 px-4 text-center font-bold rounded-3xl '>{address ? 'Sign out' : 'Sign In'}</button>
           </ul>
         </nav>
       </div>
