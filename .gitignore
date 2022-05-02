@@ -2,9 +2,11 @@
 
 # dependencies
 /node_modules
+/sanity/node_modules
 /.pnp
 .pnp.js
-
+/sonity/node_modules
+/bjrnft/node_modules
 # testing
 /coverage
 
