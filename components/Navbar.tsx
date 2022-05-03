@@ -25,7 +25,7 @@ const Navbar = ({ isDark }: Props) => {
           <Link href="/">
             <a className="font-coiny text-xl md:text-3xl font-bold">
               <span className=" pr-2 ">
-                BJR NFT CLUB
+                BJR NFT
               </span>
             </a>
           </Link>

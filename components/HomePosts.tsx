@@ -21,7 +21,7 @@ export const HomePosts = ({ collection }: Props) => {
                             collection.map((res, i) => {
                                 return (
                                     <div key={i} onClick={() => router.push("/nft/" + res.slug.current)} className='post  flex flex-col items-center justify-center max-w-xs text-black'>
-                                        <img src={urlFor(res.previewImage)} className=' object-cover object-center w-60 h-72 border-2 border-[#aaaaaa] shadow-lg rounded-2xl cursor-pointer' />
+                                        <img src={urlFor(res.previewImage).url()} className=' object-cover object-center w-60 h-72 border-2 border-[#aaaaaa] shadow-lg rounded-2xl cursor-pointer' />
                                         <h1 className='title cursor-pointer font-raleway text-center my-3 font-bold text-xl'>{res.title}</h1>
                                         <h3 className='description cursor-pointer font-medium text-gray-800  text-center border-l-2 border-rose-500 '>{res.description}</h3>
                                     </div>

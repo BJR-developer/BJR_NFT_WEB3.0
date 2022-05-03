@@ -16,7 +16,7 @@ const HeroSection = () => {
                 isDark="false"
             />
             <div className='flex flex-col  justify-center items-center absolute bottom-0 top-0 left-0 right-0 m-auto z-20'>
-                <h1 className={' text-[65px] md:text-[90px] font-extrabold text-center'}>BJR Club!!!</h1>
+                <h1 className={' text-[65px] md:text-[90px] font-extrabold text-center'}>Friends Club!!!</h1>
                 <h3 className='text-xl font-semibold poppins text-center'>BJR Friends circle collection is <br></br> joining the NFT Space on Opensea.</h3>
                 <button onClick={() => router.push("/nft/BJR Smile")} className=' px-8 py-2 flex items-center shadow-xl transition-all  bg-[#cff800] border-[#cff800] hover:bg-[#c2e900]  rounded-xl text-gray-700 text-base poppins font-medium my-5'>View on Opensea
                     <svg
@@ -38,7 +38,7 @@ const HeroSection = () => {
             <div className='absolute hidden md:block top-[15%] -left-10 bottom-0  right-0 m-auto'>
                 <div style={{ transform: `rotate(${newscrollY + 9}deg)` }} className={`flex flex-col items-center justify-center relative  transition-all 12 w-64 h-64 bg-[#00000000] border-4 border-black rounded-lg`}>
                     <img
-                        src="/images/nft/bjr-8.jpg"
+                        src="/images/nft/solo/raiyana.jpg"
                         className="w-56 h-56 absolute hidden md:block top-0 right-0 bottom-0 left-0 m-auto rounded-md object-cover"
                     />
                 </div>
@@ -46,7 +46,7 @@ const HeroSection = () => {
             <div className='absolute hidden md:block top-[15%] -right-10 bottom-0  m-auto'>
                 <div style={{ transform: `rotate(${newscrollY + 9}deg)` }} className={`flex flex-col items-center justify-center relative  transition-all 12 w-64 h-64 bg-[#00000000] border-4 border-black rounded-lg`}>
                     <img
-                        src="/images/nft/bjr1.jpg"
+                        src="/images/nft/solo/rahad.jpg"
                         className="w-56 h-56 absolute hidden md:block top-0 right-0 bottom-0 left-0 m-auto rounded-md object-cover"
                     />
                 </div>
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <div className='absolute hidden md:block top-[45%] -right-10 bottom-0  m-auto'>
                 <div style={{ transform: `rotate(${newscrollY + 9}deg)` }} className={`flex flex-col items-center justify-center relative   transition-all 12 w-64 h-64 bg-[#00000000] border-4 border-black rounded-lg`}>
                     <img
-                        src="/images/nft/bjr-6.jpg"
+                        src="/images/nft/solo/simi.jpg"
                         className="w-56 h-56 absolute hidden md:block top-0 right-0 bottom-0 left-0 m-auto rounded-md object-cover"
                     />
                 </div>
@@ -62,7 +62,7 @@ const HeroSection = () => {
             <div className='absolute hidden md:block top-[45%] -left-10 filter-[invert] bottom-0  m-auto'>
                 <div style={{ transform: `rotate(${newscrollY + 9}deg)` }} className={`flex flex-col items-center justify-center relative  transition-all 12 w-64 h-64 bg-[#00000000] border-4 border-black rounded-lg`}>
                     <img
-                        src="/images/nft/bjr-5.jpg"
+                        src="/images/nft/solo/mona.jpg"
                         className="w-56 h-56 absolute hidden md:block top-0 right-0 bottom-0 left-0 m-auto rounded-md object-cover"
                     />
                 </div>

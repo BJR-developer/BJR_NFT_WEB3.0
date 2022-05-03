@@ -1,6 +1,7 @@
 import React from 'react'
 import { SingleMember } from './loop/singleMember';
 import { Creator2 } from '../Team';
+import { urlFor } from '../../sanity';
 
 // const memberData: MemberProps[] = [
 //     {
@@ -35,7 +36,7 @@ export const ProfileCard = ({ teamData }: Creator2) => {
             {
                 teamData.map((val, i: number) => {
                     return <SingleMember key={i}
-                        profile={val.image} opensea={val.opensea} facebook={val.facebook} instagram={val.instagram} profilename={val.name} description={val.bio}
+                        profile={urlFor(val.image).url()} opensea={val.opensea} facebook={val.facebook} instagram={val.instagram} profilename={val.name} description={val.bio}
                     />
                 })
             }

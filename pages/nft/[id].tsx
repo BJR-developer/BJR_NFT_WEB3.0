@@ -13,9 +13,8 @@ interface Props {
 }
 
 export default function NFTdropPage({ collection }: Props) {
-  console.log(collection);
 
-  const [price, setPrice] = useState<string>("")
+  const [price, setPrice] = useState<string>()
   const [quantity, setQuantity] = useState<number>(1)
   const [claimed, setClaimed] = useState<number>(0)
   const [totalSupply, setTotalSupply] = useState<number>(0)
@@ -51,7 +50,6 @@ export default function NFTdropPage({ collection }: Props) {
       .catch(err => {
         toast.dismiss(loadingMinting)
         toast.error("💔Something went wrong!!", { duration: 4000 })
-        console.log("err", err.code);
         setMinting(false);
         if (err.code === 4001) {
           setTimeout(() => {
@@ -71,7 +69,8 @@ export default function NFTdropPage({ collection }: Props) {
     setLoading(true)
     const fetchPrice = async () => {
       const claimCondition = await nftDrop?.claimConditions.getAll();
-      setPrice(claimCondition[0].currencyMetadata.displayValue);
+      console.log(claimCondition);
+      setPrice(claimCondition?.[0].currencyMetadata.displayValue);
       setLoading(false)
     }
     fetchPrice();
@@ -110,7 +109,7 @@ export default function NFTdropPage({ collection }: Props) {
         <div className='leftSide py-5 lg:w-4/12 bg-gradient-to-br from-cyan-500 to-rose-500 lg:min-h-screen flex items-center flex-col justify-center text-white'>
           <img
             alt='nft 1  '
-            src={urlFor(collection.previewImage)}
+            src={urlFor(collection.previewImage).url()}
             className=' object-cover w-44 lg:w-72 h-auto p-1 sm:p-2 bg-gradient-to-br from-yellow-500 to-purple-500 rounded-xl'
           />
           <div className='text-center py-5'>
@@ -131,7 +130,7 @@ export default function NFTdropPage({ collection }: Props) {
           </div>
           {/* middle part  */}
           <div className='middle py-10'>
-            <img src={urlFor(collection.mainImage)} className='m-auto w-44 lg:w-72' alt='bjr nft club' />
+            <img src={urlFor(collection.mainImage).url()} className='m-auto w-44 lg:w-72' alt='bjr nft club' />
             <div className='textContent py-5'>
               <h1 className=' text-3xl font-extrabold text-center'>{collection.title}</h1>
               {

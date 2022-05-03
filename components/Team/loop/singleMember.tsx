@@ -9,14 +9,14 @@ export interface MemberProps {
     instagram: string,
     profilename: string,
     description: string,
-    opensea: string
+    opensea: string,
 }
 
 export const SingleMember = ({ profile, facebook, instagram, opensea, profilename, description }: MemberProps) => {
     return (
         <div className='profile1 py-8 px-5 flex flex-col items-center justify-center'>
             <div className='image pt-1.5 px-1.5 pb-0.5 rounded-full bg-gradient-to-tr from-cyan-500 to-purple-500 shadow-lg'>
-                <img src={urlFor(profile)} alt={profilename} className='w-[163px] h-[165px] object-cover rounded-full' />
+                <img src={profile} alt={profilename} className='w-[163px] h-[165px] object-cover rounded-full' />
             </div>
             <h4 className=' text-sm text-center mb-3 mt-5 font-raleway font-medium border-2 border-white px-5 rounded-b-full rounded-t-full'>{profilename}</h4>
             <div className='profileDes text-center font-raleway roboto text-lg max-w-[250px] mb-2  w-auto'>{description}</div>

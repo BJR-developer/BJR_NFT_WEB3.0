@@ -14,6 +14,7 @@ export interface Creator {
         current: string
     }
     image: Image,
+    Image: string,
     bio: string
 }
 export interface Collection {

@@ -23,7 +23,7 @@ export const AboutUs = () => {
                     <div className='h-[400px]  '>
                         <div className={`flex flex-col items-center justify-center relative -rotate-[4deg] hover:-rotate-[6deg] duration-500 transition-all 12 w-72 h-72 bg-[#0000005c] border-4 border-white rounded-lg`}>
                             <img
-                                src="/images/nft/squad/bjr-group.jpg"
+                                src="/images/nft/club.jpg"
                                 className="w-64 h-64 absolute top-0 right-0 bottom-0 left-0 m-auto rounded-md object-cover"
                             />
                             <button onClick={() => router.push("/nft/raiyana simi")} className='px-8 py-2 flex items-center -mb-16 shadow-xl transition-all bottom-0 absolute bg-[#cff800] border-2 border-[#cff800] hover:bg-transparent hover:border-white hover:text-white rounded-xl text-gray-700 text-base poppins font-medium my-5'>Get Yours Now
