@@ -18,7 +18,7 @@ const HeroSection = () => {
             <div className='flex flex-col  justify-center items-center absolute bottom-0 top-0 left-0 right-0 m-auto z-20'>
                 <h1 className={' text-[65px] md:text-[90px] font-extrabold text-center'}>Friends Club!!!</h1>
                 <h3 className='text-xl font-semibold poppins text-center'>BJR Friends circle collection is <br></br> joining the NFT Space on Opensea.</h3>
-                <button onClick={() => router.push("/nft/BJR Smile")} className=' px-8 py-2 flex items-center shadow-xl transition-all  bg-[#cff800] border-[#cff800] hover:bg-[#c2e900]  rounded-xl text-gray-700 text-base poppins font-medium my-5'>View on Opensea
+                <button onClick={() => router.push("https://testnets.opensea.io/BJR_pro")} className=' px-8 py-2 flex items-center shadow-xl transition-all  bg-[#cff800] border-[#cff800] hover:bg-[#c2e900]  rounded-xl text-gray-700 text-base poppins font-medium my-5'>View on Opensea
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6 ml-5 mt-1 animate-float-right"
