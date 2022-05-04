@@ -116,10 +116,8 @@ export default function NFTdropPage({ collection }: Props) {
               <>
                 {
                   claimed === totalSupply ?
-                    <div className='leftSide py-5 lg:w-4/12 bg-gradient-to-br from-cyan-500 to-rose-500 lg:min-h-screen flex items-center flex-col justify-center text-white'>
-                      <div className='flex mt-5 bg-white text-black font-medium rounded-md px-4 py-2 select-none justify-center items-center text-2xl'>
-                        SOLD OUT
-                      </div>
+                    <div className='flex mt-5 bg-white text-black font-medium rounded-md px-4 py-2 select-none justify-center items-center text-2xl'>
+                      SOLD OUT
                     </div>
                     :
                     <>
