@@ -1,3 +1,5 @@
+<a href="https://app.daily.dev/jamilurahmanbjr"><img src="https://api.daily.dev/devcards/2bbeff63d0aa4c5097c95e5a0603eb94.png?r=npf" width="400" alt="Jamilur Rahman's Dev Card"/></a>
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
